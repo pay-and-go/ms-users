@@ -1,0 +1,7 @@
+django
+#mysqlclient
+djangorestframework==3.12.4
+djangorestframework-simplejwt==4.6.0
+django-filter==2.4.0
+sqlparse==0.4.1
+mysql-connector-python
