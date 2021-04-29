@@ -14,6 +14,7 @@ class UsuarioSerializer(ModelSerializer):
 
     def create(self, validated_data):
 
+        print(validated_data)
         user = Usuario(first_name = validated_data.get("first_name"),
                         last_name = validated_data.get("last_name"),
                         cedula = validated_data.get("cedula"),
@@ -24,10 +25,10 @@ class UsuarioSerializer(ModelSerializer):
 
     def update(self, instance, validated_data):
 
-        instance.first_name = validated_data.get("first_name"),
-        instance.last_name = validated_data.get("last_name"),
-        #instance.cedula = validated_data.get("cedula"),
-        instance.mail = validated_data.get("mail"),
+        instance.first_name = validated_data.get("first_name")
+        instance.last_name = validated_data.get("last_name")
+        instance.cedula = validated_data.get("cedula")
+        instance.mail = validated_data.get("mail")
         instance.password = validated_data.get("password")
         instance.save()
         return instance
