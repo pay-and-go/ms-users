@@ -8,6 +8,8 @@ class Usuario(models.Model):
     cedula = models.IntegerField(blank=False, null=False, unique=True,  validators=[MinValueValidator(00000000000), MaxValueValidator(99999999999)])
     mail = models.EmailField(max_length = 254, default='DEFAULT VALUE')
     password = models.CharField(blank=False, null=False,max_length = 20)
+
+    USERNAME_FIELD = 'mail'
     
     
 class Log(models.Model):
