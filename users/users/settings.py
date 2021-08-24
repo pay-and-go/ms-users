@@ -85,20 +85,21 @@ DATABASES = {
         'NAME': 'usuarios',
         'USER': 'django',
         'PASSWORD': 'Django2021*',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'HOST': 'bd-usuarios.clnauda7mqyi.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': [
-        'django_filters.rest_framework.DjangoFilterBackend'
-    ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
     ],
 }
-
+AUTH_USER_MODEL = 'usuarios.Usuario'
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -136,3 +137,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
