@@ -7,14 +7,14 @@ from apps.usuarios.views import registration_view, detail_view, update_view, del
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
-    path('user/', UserList.as_view()),
-    path('user/<int:pk>', UserDetail.as_view()),
-    path('log/', LogList.as_view()),
-    path('register/', registration_view, name='register'),
-    path('login/', obtain_auth_token, name='login'),
-    path('detail/<username>', detail_view, name='detail'),
-    path('update/<username>', update_view, name='update'),
-    path('delete/<username>', delete_view, name='delete'),
+    path('users-ms/user/', UserList.as_view()),
+    path('users-ms/user/<int:pk>', UserDetail.as_view()),
+    path('users-ms/log/', LogList.as_view()),
+    path('users-ms/register/', registration_view, name='register'),
+    path('users-ms/login/', obtain_auth_token, name='login'),
+    path('users-ms/detail/<username>', detail_view, name='detail'),
+    path('users-ms/update/<username>', update_view, name='update'),
+    path('users-ms/delete/<username>', delete_view, name='delete'),
     #path('login', UserDetail.login),
 ]
 
