@@ -53,7 +53,7 @@ class UpdateSerializer(ModelSerializer):
 
     class Meta:
         model = Usuario
-        fields = ['first_name', 'last_name', 'username', 'cedula', 'mail', 'password' ]
+        fields = ['first_name', 'last_name', 'username', 'cedula', 'mail' ]
     
 
 class UsuarioSerializer(ModelSerializer):
